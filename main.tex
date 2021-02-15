@@ -1,109 +1,115 @@
-\documentclass[compress,12pt,xcolor=dvipsnames]{beamer}
-\definecolor{LHCblue}{RGB}{0, 159, 227}
-\definecolor{ariblu}{RGB}{0, 159, 227}
-\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
-\definecolor{lgreen}{RGB}{148, 193, 34} %{255, 255, 255}
-\usepackage{subfigure}
-\usepackage{braket}
-\usepackage{tikz}
-\usepackage{pgfgantt}
- \usepackage{hyperref}
-\usecolortheme[named=LHCblue]{structure}
-%\setbeamercolor{structure}{bg=LHCblue}
-\usepackage{tikz}   
-\setbeamercolor{palette primary}{fg=LHCblue,bg=structure.bg!35!lgreen} % changed this
-\setbeamercolor{palette secondary}{use=structure,fg=structure.fg!100!white} % changed this
-%\setbeamercolor{palette tertiary}{use=structure,fg=structure.fg!100!lgreen}
-\usepackage[mathscr]{euscript}
-\usepackage{array}
-\usetikzlibrary{mindmap, trees, shadows, shapes, calc, fadings, positioning, decorations.pathreplacing, intersections}
-\mode<presentation>
-\newcommand*\oldmacro{}%
-\let\oldmacro\insertshorttitle%
-\renewcommand*\insertshorttitle{%
-  \oldmacro\hfill%
-  }%/\,\inserttotalframenumber
-\setbeamertemplate{footline}[frame number]
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\beamertemplatenavigationsymbolsempty
-\usetheme{Ilmenau} % Beamer theme v 3.0
-\useoutertheme{infolines}%Beamer Outer Theme-circles on top
-\setbeamercolor{section in head/foot}{bg=LHCblue}
-\setbeamercolor{subsection in head/foot}{bg=white}
-\setbeamercolor{framenumber in head/foot}{bg=white}
-\setbeamercolor{section in head/foot}{fg=black}
-\setbeamercolor{subsection in head/foot}{fg=black}
-\setbeamercolor{btitle in head/foot}{bg=LHCblue}
-\setbeamercolor{bauthor in head/foot}{bg=lgreen}
-\setbeamercolor{bauthor in head/foot}{fg=black}
-\setbeamercolor{title in titlepage}{fg=LHCblue}
-\setbeamercolor{title in titlepage}{bg=lgreen}
-\useinnertheme{circles} 
-\setbeamertemplate{footline}
-{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.47\paperwidth,ht=2ex,dp=1ex,center]{bauthor in head/foot}%
-    \usebeamerfont{title in head/foot}  \insertshorttitle
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.06\paperwidth,ht=2ex,dp=1ex,center]{framenumber in head/foot}%
-    \usebeamerfont{framenumber in head/foot}  
-  \end{beamercolorbox}%
-  }
-  \begin{beamercolorbox}[wd=.47\paperwidth,ht=2ex,dp=1ex,center]{btitle in head/foot}%
-    \usebeamerfont{title in head/foot} \insertshortauthor \hspace{16mm} \insertframenumber{}/\inserttotalframenumber
-  \end{beamercolorbox}\vskip2pt}%
+\documentclass[10pt,aspectratio=169]{beamer}%
+\usetheme[
+%%% option passed to the outer theme
+%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
+  ]{Feather}
+  
+% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
 
-\setbeamertemplate{headline}
-{
-  \leavevmode%
-  \hbox{%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.6ex,dp=1ex,center]{section in head/foot}%
-    \usebeamerfont{section in head/foot}\insertnavigation{.5\paperwidth}
-  \end{beamercolorbox}%
-   }
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.6ex,dp=1ex,center]{bauthor in head/foot}%
-    \usebeamerfont{title in head/foot} \insertsubsection
-  \end{beamercolorbox}\vskip2pt}%
-\usepackage{beamerthemebars}
-\usepackage{lmodern}
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Change the bar colors:
+%\setbeamercolor{Feather}{fg=red!20,bg=red}
 
+% Change the color of the structural elements:
+%\setbeamercolor{structure}{fg=red}
 
+% Change the frame title text color:
+%\setbeamercolor{frametitle}{fg=blue}
+
+% Change the normal text color background:
+%\setbeamercolor{normal text}{fg=black,bg=gray!10}
+
+%-------------------------------------------------------
+% INCLUDE PACKAGES
+%-------------------------------------------------------
 \usepackage[round, sort, authoryear]{natbib}
 
-\ganttset{calendar week text={\tiny{W\currentweek}}}
-\usepackage{textpos}
-\title[Short title]{Long title}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{listings}
+\usepackage{url}
+% \usepackage[table]{xcolor}
+%-------------------------------------------------------
+% DEFFINING AND REDEFINING COMMANDS
+%-------------------------------------------------------
+\usepackage{subfigure}
+% colored hyperlinks
+\newcommand{\chref}[2]{
+  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
+}
+\usepackage{multimedia}
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
 
-\author[A.Valmassoi]{Arianna Valmassoi and others.}
-\institute{Schools}
-\bibliographystyle{agsm}
+\usepackage{appendixnumberbeamer}
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
 
-\begin{document}
-\begin{frame}
-\begin{flushleft}
-%\includegraphics[height=1cm]{ncar-logo.eps}
-\end{flushleft}
-\vspace{-5mm}
+\title[Title] % [] is optional - is placed on the bottom of the sidebar on every slide
+{ % is placed on the title page
+
+TITLE
+}
+
+\subtitle[]
+{
+       Sub title
+}
+
+\author[Arianna Valmassoi]
+ {
+ \textbf{Arianna Valmassoi}
+}
+
+\institute[]
+{
+
+XX
+
+}
+
+\logo{\makebox[0.95\paperwidth]{%
+    \includegraphics[height=1.5cm,keepaspectratio]{herz_logo.jpg}%
+    \hfill%
+    \includegraphics[width=1cm,keepaspectratio]{cc.png}
+     \hfill%   
+    \includegraphics[height=1.5cm,keepaspectratio]{logo_ifg.png}%
+  }%
+  }
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+\begin{document} % 20 min time: 17+3 questions
+
+%-------------------------------------------------------
+% THE TITLEPAGE
+%-------------------------------------------------------
+
+{
+%\1% % this is the name of the PDF file for the background
+
+
+
+\begin{frame}{Title}{sub title}
 \maketitle
-\vspace{-22mm}
-\begin{flushright}
-%\includegraphics[height=1.5cm]{logo.png}
-\end{flushright}
-
 \end{frame}
+\logo{}
 
 
-\begin{frame} 
- \tableofcontents
- \end{frame}
-\section{Intro}
-\begin{frame} 
- Test
- \end{frame}
-\section{Methods}
-\begin{frame} 
-Test
-\end{frame}
+
+
+
+}
+
 \end{document}
+
