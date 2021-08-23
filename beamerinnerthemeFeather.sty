@@ -36,32 +36,32 @@
 % title page
 %% definitions for fonts of the different elements
   
-               \setbeamerfont{institute}{family=\rmfamily, size = \footnotesize}
-               \setbeamerfont{title}{family=\rmfamily, size = \Large} 
-               \setbeamerfont{subtitle}{family=\rmfamily, size = \large}
-               \setbeamerfont{author}{family=\rmfamily, size = \normalsize}
-               \setbeamerfont{date}{family=\rmfamily, size = \footnotesize}
+               \setbeamerfont{institute}{family=\sffamily, size = \footnotesize}
+               \setbeamerfont{title}{family=\sffamily, size = \Large} 
+               \setbeamerfont{subtitle}{family=\sffamily, size = \large}
+               \setbeamerfont{author}{family=\sffamily, size = \normalsize}
+               \setbeamerfont{date}{family=\sffamily, size = \footnotesize}
 
                \setbeamertemplate{title page}
    {
 
 %% setting the above definitions
 
-        \begin{minipage}[c][\textheight][c]{1.08\textwidth}
+        \begin{minipage}[c][\textheight][c]{1.0\textwidth}
 
                   \centering
 
               %    {\usebeamerfont{institute}\insertshortinstitute}\vspace*{25pt}
 
-               \hspace{-7mm}{\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}\vspace*{10pt}
+               {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}\vspace*{10pt}
 
-                 \hspace{-7mm}{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}\vspace*{25pt}
+                 {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}\vspace*{25pt}
 
-                \hspace{-7mm} {\usebeamerfont{author}\insertauthor}\vspace*{15pt}
+             {\usebeamerfont{author}\insertauthor}\vspace*{15pt}
                  
-                 \hspace{-7mm}{\usebeamerfont{institute}\insertinstitute}\vspace*{15pt}
+            {\usebeamerfont{institute}\insertinstitute}\vspace*{15pt}
                  
-               \hspace{-7mm}  {\usebeamerfont{date}\insertdate}\vspace*{\baselineskip}
+             {\usebeamerfont{date}\insertdate}\vspace*{\baselineskip}
 
          \end{minipage}
    }
